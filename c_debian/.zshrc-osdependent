@@ -1,0 +1,90 @@
+## File probing and management stuff.
+alias   ls='ls -F --color=auto'
+alias   d0='du --max-depth=0'
+alias   d1='du --max-depth=1'
+alias   d2='du --max-depth=2'
+alias   d3='du --max-depth=3'
+#alias tail='inotail'
+alias   ls='ls -F --color=auto'
+alias   d0='du --max-depth=0'
+alias   d1='du --max-depth=1'
+alias   d2='du --max-depth=2'
+alias   d3='du --max-depth=3'
+
+alias xlock='i3lock -d -b -t'
+
+
+## Apt.
+alias ags="apt-get source"
+alias ag="nocorrect sudo apt-get"
+alias ac="nocorrect apt-cache"
+alias agi="ag --no-install-recommends install"
+alias agu="ag update"
+alias agup="sudo debdelta-upgrade && ag upgrade"
+alias agr="ag remove"
+alias agpr="ag --purge remove"
+alias acd="ac depends"
+alias acrd="ac rdepends"
+alias acsh="ac show"
+alias acs="ac search"
+alias acns="ac --names-only search"
+
+## CD/DVD burning.
+function mkiso() {
+	genisoimage -joliet-long -RJ -A DVD1 -o ${1}.iso ${1}
+}
+
+# Burn an ISO.
+function burn() {
+	if [ $1 ] ; then
+		growisofs -dvd-compat -Z /dev/dvd=${1}
+		cmp /dev/cdrom ${1}
+	fi
+	echo "cmp returned: " $?
+}
+
+function burndir() {
+	if [ $1 ] ; then growisofs -Z /dev/dvd -R -J -speed=8 ${1} ; fi
+}
+
+function burndircontinue() {.
+	if [ $1 ] ; then growisofs -M /dev/dvd -R -J -speed=8 ${1} ; fi
+}
+
+alias burned_check='sudo mount /mnt/cdrom ; find /mnt/cdrom -type f -exec cat {} > /dev/null \; ; sudo umount /mnt/cdrom ; eject'
+
+alias eject='eject -T'
+
+#alias burn='growisofs -Z /dev/dvd -R -J -speed=8'
+#alias burncontinue='growisofs -M /dev/dvd -R -J -speed=8'
+#alias burniso='growisofs -dvd-compat -Z /dev/dvd='
+#alias burned_check='sudo mount /mnt/cdrom ; find /mnt/cdrom -type f -exec cat {} > /dev/null \; ; sudo umount /mnt/cdrom ; eject'
+#alias eject='eject -T'
+
+## Misc.
+# Should always be set to prevent mplayer from messing up fb.
+alias m='DISPLAY=${DISPLAY:=:0.0} mplayer -vf screenshot -xineramascreen -1 -utf8 -fixed-vo -softvol -softvol-max 200'
+alias clivebest='noglob clive --format=best '
+alias ytd='noglob youtube-dl -i -o "%(title)s_%(id)s.%(ext)s" -c'
+alias sc='nocorrect sudo systemctl'
+alias dmesg='sudo dmesg'
+alias import='nocorrect import'
+
+function ytplay () {
+	if [ -z $1 ] ; then
+		echo "Usage: ytd <youtube url>"
+		return 1
+	fi
+	#local QUALITY="${2:-best}"
+	#local URL=$(/usr/bin/youtube-dl -qg "$QUALITY" "$1")
+	local URL=$(/usr/bin/youtube-dl -qg $@)
+	m -cache 10000 "$URL"
+	#unset QUALITY
+	unset URL
+}
+alias ytplay='noglob ytplay'
+
+
+## Terminal stuff.
+# Do not grab C-w from applications, especially Python.
+stty werase undef

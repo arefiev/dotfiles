@@ -1,0 +1,79 @@
+Rxvt*color0:  #000000
+Rxvt*color1:  #cc0000
+Rxvt*color2:  #00cc00
+Rxvt*color3:  #7799ff
+Rxvt*color4:  #5566aa
+Rxvt*color5:  #dd0000
+Rxvt*color6:  #8899cc
+Rxvt*color7:  #cccccc
+
+Rxvt*color8:  #888888
+Rxvt*color9:  #ff0000
+Rxvt*color10: #00ff00
+Rxvt*color11: #ccddff
+Rxvt*color12: #7788bb
+Rxvt*color13: #ff0000
+Rxvt*color14: #aabbff
+Rxvt*color15: #ffffff
+
+Rxvt*colorUL:  #aabbff
+Rxvt*colorBD:  #aabbff
+
+Rxvt*background: black
+Rxvt*foreground: white
+Rxvt*colorUL: white
+Rxvt*fading: 50
+Rxvt*font: -*-terminus-medium-*-normal-r-14-140-75-75-c-0-koi8-r
+Rxvt*boldFont: -*-terminus-medium-*-*-r-14-140-75-75-c-0-koi8-r
+Rxvt*scrollWithBuffer: False
+Rxvt*saveLines: 6666
+Rxvt*scrollBar: False
+Rxvt*scrollTtyOutput: False
+
+XTerm*background: black
+XTerm*foreground: white
+XTerm*scrollWithBuffer: False
+XTerm*saveLines: 6666
+XTerm*scrollBar: False
+XTerm*scrollTtyOutput: False
+XTerm*font: -*-terminus-medium-r-normal-*-14-140-75-75-c-0-koi8-r
+XTerm*boldFont: -*-terminus-medium-r-normal-*-14-140-75-75-c-0-koi8-r
+
+URxvt*color0:  #000000
+URxvt*color1:  #cc0000
+URxvt*color2:  #00cc00
+URxvt*color3:  #7799ff
+URxvt*color4:  #5566aa
+URxvt*color5:  #dd0000
+URxvt*color6:  #8899cc
+URxvt*color7:  #cccccc
+
+URxvt*color8:  #888888
+URxvt*color9:  #ff0000
+URxvt*color10: #00ff00
+URxvt*color11: #ccddff
+URxvt*color12: #7788bb
+URxvt*color13: #ff0000
+URxvt*color14: #aabbff
+URxvt*color15: #ffffff
+
+URxvt*colorUL:  #aabbff
+URxvt*colorBD:  #aabbff
+
+URxvt*background: black
+URxvt*foreground: white
+URxvt*colorUL: white
+URxvt*fading: 50
+URxvt*font: -*-terminus-medium-r-normal-*-14-140-75-75-c-0-koi8-r
+URxvt*boldFont: -*-terminus-medium-r-normal-*-14-140-75-75-c-0-koi8-r
+URxvt*scrollWithBuffer: False
+URxvt*saveLines: 6666
+URxvt*scrollBar: False
+URxvt*scrollTtyOutput: False
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: x-www-browser
+
+XLock*mode: blank
+XLock*info: Nothing to see here.
+

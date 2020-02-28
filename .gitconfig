@@ -1,0 +1,33 @@
+[giggle]
+	compact-mode = false
+	main-window-maximized = false
+	main-window-geometry = 1278x993+1280+29
+	history-view-vpane-position = 461
+	main-window-view = HistoryView
+	file-view-vpane-position = 903
+	show-graph = true
+[user]
+	email = m.arefiev@gmail.com
+	name = Mikhail Arefiev
+
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	unstage = reset HEAD --
+	unadd = reset HEAD --
+	amend = commit --amend --
+
+	loc-today-head = "!git diff \"HEAD@{14 hours ago}\" HEAD | grep -e \"^\\+\" | grep -ve \"^\\+\\s*$\" | wc -l"
+
+	; From http://noamlewis.wordpress.com/2012/05/21/my-git-aliases/
+	; and http://stackoverflow.com/a/8408640/562906
+	dupes = !git ls-tree -r HEAD | cut -c 13- | sort | uniq -D -w 40
+	create-branch = "!bash -c \"[[ $# = 1 ]] || echo Missing argument: new branch name && git push origin HEAD:$1 && git checkout -b $1 origin/$1\""
+
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[push]
+	default = current

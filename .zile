@@ -1,0 +1,89 @@
+; .zile sample configuration
+
+; Do not display the splash screen at startup [default: nil]
+(setq skip-splash-screen nil)
+
+; The default tabulation width [default: 8]
+(setq tab-width 4)
+
+; Always indent [default: t]
+; Controls the operation of the TAB key.
+; If enabled, hitting TAB always just indents the current line.
+; Otherwise, hitting TAB indents the current line if point is at the
+; left margin or in the line's indentation, otherwise it moves to the
+; next tab stop.
+;(setq tab-always-indent t)
+
+; Insert real tabs [default: nil]
+; If enabled, insert-tab inserts `real' tabs; otherwise, it always
+; inserts spaces.
+(setq indent-tabs-mode t)
+
+; The default fill column (in Auto Fill Mode) [default: 72]
+(setq fill-column 72)
+
+; Enable the Auto Fill Mode [default: nil]
+(setq auto-fill-mode nil)
+
+; Kill whole line regardless of cursor position [default: nil]
+(setq kill-whole-line nil)
+
+; Ignore case when searching [default: t]
+(setq case-fold-search t)
+
+; Match case when replacing [default: t]
+(setq case-replace t)
+
+; Enable beep [default: t]
+; If enabled, a sound will be emitted on any error.
+(setq beep t)
+
+; Standard indentation level [default: 4]
+; Default number of columns for margin-changing functions to indent.
+(setq standard-indent 4)
+
+; If enabled, deactivates the mark when the buffer contents change.
+; Also enables highlighting of the region whenever the mark is active.
+; The variable `highlight-nonselected-windows' controls whether to
+; highlight all windows or just the selected window. [default: t]
+(setq transient-mark-mode t)
+
+; If enabled, highlight region even in nonselected windows.
+; [default: nil]
+(setq highlight-nonselected-windows nil)
+
+; Specify whether backups are made [default: t]
+; If enabled, Zile will create a backup file with a tilde `~' appended
+; to the name (e.g.: on saving `foo.c' it will create the backup
+; `foo.c~').
+;(setq make-backup-files nil)
+(setq backup-directory "~/.saves/zile")
+
+; Specify target backup directory [default: nil]
+; If set to a directory name (which must exist), backups are created
+; in that directory. Otherwise backups are created alongside the
+; backuped file.
+(setq backup-directory ~/.zile.d/autosave)
+
+; Rebind keys
+; (global-set-key "key" 'func)
+
+; Better bindings for when backspace generates C-h
+(global-set-key "\BS"    'backward-delete-char)
+(global-set-key "\C-h"   'backward-delete-char)
+(global-set-key "\M-:"   'mark-paragraph)
+(global-set-key "\M-hb"  'list-bindings)
+(global-set-key "\M-hd"  'describe-function)
+(global-set-key "\M-hf"  'describe-function)
+(global-set-key "\M-hF"  'view-zile-FAQ)
+(global-set-key "\M-hk"  'describe-key)
+(global-set-key "\M-hlr" 'list-registers)
+(global-set-key "\M-hs"  'help-config-sample)
+(global-set-key "\M-ht"  'help-with-tutorial)
+(global-set-key "\M-hw"  'where-is)
+(global-set-key "\M-hv"  'describe-variable)
+
+(global-set-key "\C-w"     'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-xt"    'beginning-of-buffer)
+(global-set-key "\C-xe"    'end-of-buffer)

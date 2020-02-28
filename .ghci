@@ -1,0 +1,12 @@
+let pasteLoop t = do { l <- getLine; let fn = ("/tmp/" ++ show t ++ ".hs") in if l == "\^D" then (return fn) else do appendFile fn (l++"\n"); pasteLoop t }
+:def pasteCode (\_ -> System.Posix.Time.epochTime >>= pasteLoop >>= (return . (++) ":load "))
+
+:set -fno-print-bind-result
+-- :set -fglasgow-exts
+
+:set -XArrows
+:set -XGADTs
+:set -XNoMonomorphismRestriction
+:set -XStandaloneDeriving
+
+:set +s

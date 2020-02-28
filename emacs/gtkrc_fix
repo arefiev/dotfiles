@@ -1,0 +1,10 @@
+style "contrast"
+{
+  GtkScrollbar::has_forward_stepper  = 0
+  GtkScrollbar::has_backward_stepper = 0
+  bg[NORMAL]   = "black"
+  fg[NORMAL]   = "dark blue"
+  bg[PRELIGHT] = "dark blue"
+  fg[PRELIGHT] = "black"
+}
+class "GtkScrollbar" style "contrast"

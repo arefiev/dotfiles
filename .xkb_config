@@ -1,0 +1,503 @@
+xkb_keymap "rusadv"
+{
+        xkb_keycodes
+        {
+                //include "xfree86"
+                include "evdev"
+        };
+
+        xkb_types
+        {
+                include "complete"
+        };
+
+        xkb_compatibility
+        {
+                //include "default"
+                //include "xfree86"
+                include "complete"
+                indicator "Scroll Lock" {
+                       modifiers= None;
+                       groups=All-group1;
+                };
+
+                // Shift to the 3rd group
+                interpret ISO_Last_Group_Lock { action = SetGroup(group=3); };
+		interpret ISO_First_Group     { action = LockGroup(group=1); };
+		interpret ISO_Last_Group      { action = LockGroup(group=4); };
+        };
+
+        xkb_symbols
+        {
+                include "pc"
+                include "us"
+                include "ru"
+                name[Group1] = "US/dvorak";
+                name[Group2] = "Russian";
+                name[Group3] = "Pretty intense symbols";
+                name[Group4] = "Greek";
+
+                key <ESC> {
+                    [Escape]
+                };
+                
+                #############################               
+                # 1st keyboard row
+                key <TLDE> {
+                    [quoteleft, asciitilde],
+                    [Cyrillic_io, Cyrillic_IO],
+                    [0x01002261, approxeq], // was [acute, approxeq] before 2012-05-07
+                    [quoteleft, asciitilde]
+                };
+                key <AE01> {
+                    [exclam, 1],
+                    [exclam, 1],
+                    [onesuperior, 0x010000A1], // ,inverted exclamation mark
+                    [exclam, 1]
+                };
+                key <AE02> {
+                    [at, 2],
+                    [quotedbl, 2],
+                    [twosuperior, onehalf],
+                    [at, 2]
+                };
+                key <AE03> {
+                    [numbersign, 3],
+                    [numerosign, 3],
+                    [threesuperior, onethird],
+                    [numbersign, 3]
+                };
+                key <AE04> {
+                    [dollar, 4],
+                    [semicolon, 4],
+                    [none, onequarter],
+                    [dollar, 4]
+                };
+                key <AE05> {
+                    [percent, 5],
+                    [percent, 5],
+                    [0x01005350],
+                    [percent, 5]
+                };
+                key <AE06> {
+                    [asciicircum, 6],
+                    [colon, 6],
+                    [none, 0x01002623],  // ,bio hazard
+                    [asciicircum, 6]
+                };
+                key <AE07> {
+                    [ampersand, 7],
+                    [question, 7],
+                    [section, 0x01002622], // paragraph, radioactive
+                    [ampersand, 7]
+                };
+                key <AE08> {
+                    [asterisk, 8],
+                    [asterisk, 8],
+                    [0x01002605, 0x01002606], //black star, white star
+                    [asterisk, 8]
+                };
+                key <AE09> {
+                    [parenleft, 9],
+                    [parenleft, 9],
+                    [0x010027e8, 0x01002625], // math angle bracket, ankh
+                    [parenleft, 9]
+                };
+                key <AE10> {
+                    [parenright, 0],
+                    [parenright, 0],
+                    [0x010027e9, 0x0100269b], // m.a.b., atom sign
+                    [parenright, 0]
+                };
+                key <AE11> {
+                    [bracketleft, braceleft],
+                    [minus, underscore],
+                    [0x1000463, 0x1000462],  // yat, capital yat
+                    [bracketleft, braceleft]
+                };
+                key <AE12> {
+                    [bracketright, braceright],
+                    [equal, plus],
+                    [0x01000473, 0x01000472], // phita, cap. phita
+                    [bracketright, braceright]
+                };
+                
+                key <BKSL> {
+                    [backslash, bar],
+                    [backslash, slash],
+                    [ellipsis, dagger],  // ..., t
+                    [backslash, bar]
+                };
+
+                key <BKSP> {
+                    type="CTRL+ALT",
+                    [BackSpace, BackSpace],
+                    [BackSpace, BackSpace],
+                    [BackSpace, BackSpace],
+		    [BackSpace, BackSpace]
+                };
+                
+                #############################
+                # 2nd keyboard row
+
+                key <TAB> {
+                    [Tab, ISO_Left_Tab]
+                };
+                key <AD01> {
+                    [quoteright, quotedbl],
+                    [Cyrillic_shorti, Cyrillic_SHORTI],
+                    [grave, doublelowquotemark],
+                    [quoteright, quotedbl]
+                };
+                key <AD02> {
+                    [comma, less],
+                    [Cyrillic_tse, Cyrillic_TSE],
+                    [guillemotleft, leftdoublequotemark],
+                    [comma, less]
+                };
+                key <AD03> {
+                    [period, greater],
+                    [Cyrillic_u, Cyrillic_U],
+                    [guillemotright, rightdoublequotemark],
+                    [period, greater]
+                };
+                key <AD04> {
+                    [p, P],
+                    [Cyrillic_ka, Cyrillic_KA],
+                    [Greek_pi, 0x0100220f],  //, n-ary product
+		    [Greek_pi, Greek_PI]
+                };
+                key <AD05> {
+                    [y, Y],
+                    [Cyrillic_ie, Cyrillic_IE],
+                    [0x01002713, 0x01002717],  // fancy ballot V and X
+		    [Greek_upsilon, Greek_UPSILON]
+                };
+                key <AD06> {
+                    [f, F],
+                    [Cyrillic_en, Cyrillic_EN],
+                    [Greek_phi, 0x010022A5], // Falsum (bottom).
+		    [Greek_phi, Greek_PHI]
+                };
+                key <AD07> {
+                    [g, G],
+                    [Cyrillic_ghe, Cyrillic_GHE],
+                    [Greek_gamma, Greek_GAMMA],
+		    [Greek_gamma, Greek_GAMMA]
+                };
+                key <AD08> {
+                    [c, C],
+                    [Cyrillic_sha, Cyrillic_SHA],
+                    [0x10021BB, copyright],
+		    [Greek_psi, Greek_PSI]
+                };
+                key <AD09> {
+                    [r, R],
+                    [Cyrillic_shcha, Cyrillic_SHCHA],
+                    [0x10021D7, registered],
+		    [Greek_rho, Greek_RHO]
+                };
+                key <AD10> {
+                    [l, L],
+                    [Cyrillic_ze, Cyrillic_ZE],
+                    [Greek_lambda, Greek_LAMBDA],
+		    [Greek_lambda, Greek_LAMBDA]
+                };
+                key <AD11> {
+                    [slash, question],
+                    [Cyrillic_ha, Cyrillic_HA],
+                    [0x0100203d, questiondown],  // interrobanged!!!
+		    [slash, question]
+                };
+                key <AD12> {
+                    [equal, plus],
+                    [Cyrillic_hardsign, Cyrillic_HARDSIGN],
+                    [notequal, plusminus],
+                    [equal, plus]
+                };
+
+                
+                #############################
+                # 3rd keyboard row
+
+                key <AC01> {
+                    [a, A],
+                    [Cyrillic_ef, Cyrillic_EF],
+                    [Greek_alpha, 0x01002200],  //, for all
+		    [Greek_alpha, Greek_ALPHA]
+                };
+                key <AC02> {
+                    [o, O],
+                    [Cyrillic_yeru, Cyrillic_YERU],
+                    [0x01002218, degree],  // smallring operator
+		    [Greek_omicron, Greek_OMICRON]
+                };
+                key <AC03> {
+                    [e, E],
+                    [Cyrillic_ve, Cyrillic_VE],
+                    [0x01002203, 0x01002204], // there exists, not exists
+		    [Greek_epsilon, Greek_EPSILON]
+                };
+                key <AC04> {
+                    [u, U],
+                    [Cyrillic_a, Cyrillic_A],
+		    [0x010021B6, none],
+		    [Greek_theta, Greek_THETA]
+                };
+                key <AC05> {
+                    [i, I],
+                    [Cyrillic_pe, Cyrillic_PE],
+                    [0x01002208, 0x01002209],  // element of, not an element
+		    [Greek_iota, Greek_IOTA]
+                };
+                key <AC06> {
+                    [d, D],
+                    [Cyrillic_er, Cyrillic_ER],
+                    [Greek_delta, Greek_DELTA],
+		    [Greek_delta, Greek_DELTA]
+                };
+                key <AC07> {
+                    [h, H],
+                    [Cyrillic_o, Cyrillic_O],
+                    [heart, 0x01002721],  //, star of david
+		    [Greek_eta, Greek_ETA]
+                };
+                key <AC08> {
+                    [t, T],
+                    [Cyrillic_el, Cyrillic_EL],
+                    [Greek_tau, 0x010022a2], // Turnstile.
+		    [Greek_tau, Greek_TAU]
+                };
+                key <AC09> {
+                    [n, N],
+                    [Cyrillic_de, Cyrillic_DE],
+                    [],
+		    [Greek_nu, Greek_NU]
+                };
+                key <AC10> {
+                    [s, S],
+                    [Cyrillic_zhe, Cyrillic_ZHE],
+                    [Greek_sigma, Greek_SIGMA],
+                    [Greek_sigma, Greek_SIGMA]
+                };
+                key <AC11> {
+                    [minus, underscore],
+                    [Cyrillic_e, Cyrillic_E],
+                    [emdash, notsign],
+                    [minus, underscore]
+                };
+                key <RTRN> {
+                    [Return]
+                };
+
+                #############################
+                # 4th keyboard row
+                
+                key <AB01> {
+                    [semicolon, colon],
+                    [Cyrillic_ya, Cyrillic_YA],
+                    [dead_acute, dead_grave],
+                    [semicolon, colon]
+                };
+                key <AB02> {
+                    [q, Q],
+                    [Cyrillic_che, Cyrillic_CHE],
+                    [dead_diaeresis, dead_abovering], //motorhead and angstrom
+		    [semicolon, colon]
+                };
+                key <AB03> {
+                    [j, J],
+                    [Cyrillic_es, Cyrillic_ES],
+                    //[doublelowquotemark, J],
+		    [],
+		    [Greek_xi, Greek_XI]
+                };
+                key <AB04> {
+                    [k, K],
+                    [Cyrillic_em, Cyrillic_EM],
+		    [],
+		    [Greek_kappa, Greek_KAPPA]
+                };
+                key <AB05> {
+                    [x, X],
+                    [Cyrillic_i, Cyrillic_I],
+                    [multiply, 0x010022C5],   // carthesian prod, dot prod
+		    [Greek_chi, Greek_CHI]
+                };
+                key <AB06> {
+                    [b, B],
+                    [Cyrillic_te, Cyrillic_TE],
+                    [Greek_beta],
+		    [Greek_beta, Greek_BETA]
+                };
+                key <AB07> {
+                    [m, M],
+                    [Cyrillic_softsign, Cyrillic_SOFTSIGN],
+                    [Greek_mu, trademark],
+		    [Greek_mu, Greek_MU]
+                };
+                key <AB08> {
+                    [w, W],
+                    [Cyrillic_be, Cyrillic_BE],
+		    [],
+		    [Greek_finalsmallsigma, Greek_SIGMA]
+                };
+                key <AB09> {
+                    [v, V],
+                    [Cyrillic_yu, Cyrillic_YU],
+		    [],
+		    [Greek_omega, Greek_OMEGA]
+                };
+                key <AB10> {
+                    [z, Z],
+                    [period, comma],
+		    [],
+		    [Greek_zeta, Greek_ZETA]
+                };
+
+
+                #############################
+                # the last keyboard row
+                key <SPCE> {
+                    [space, space],
+                    [space, space],
+                    [nobreakspace, nobreakspace],
+                    [space, space]
+                };
+
+
+                #############################
+                # arrows keys
+                key <LEFT> {
+                    [Left],
+                    [Left],
+                    [0x1002190, 0x10021D0] // arrow left, wide arrow left
+                };
+
+                key <UP> {
+                    [Up],
+                    [Up],
+                    [0x1002191, 0x10021D1]
+                };
+
+                key <RGHT> {
+                    [Right],
+                    [Right],
+                    [0x1002192, 0x10021D2]
+                };
+ 
+                key <DOWN> {
+                    [Down],
+                    [Down],
+                    [0x1002193, 0x10021D3]
+                };
+
+                // Switches: 
+                // //Menu - temporary switch to 3rd group.
+                // LShift+RShift - persistent switch between dvorak and ru.
+                // RShift+RCtl   - persistent switch to greek.
+                // RCtl          - temp. switch to typographic.
+                // Shift+RCtl    - compose (press Shift+RCtl and then compositing
+                //                 characters, e. g. ae for the 'ae' ligature.
+                key <RTSH> {
+                    [Shift_R, ISO_Next_Group],
+                    [Shift_R, ISO_Prev_Group],
+                    [Shift_R, ISO_First_Group],
+                    [Shift_R, ISO_First_Group]
+                };
+                key <LFSH> {
+                    [Shift_L, ISO_Next_Group],
+		    [Shift_L, ISO_Prev_Group],
+                    [Shift_R, ISO_First_Group],
+                    [Shift_R, ISO_First_Group]
+                };
+                key <LCTL> {
+                    [Control_L],
+                    [Control_L]
+                };
+                key <RCTL> {
+                    [Control_R, ISO_Last_Group],
+                    [Control_R, ISO_Last_Group],
+		    [Control_R, ISO_First_Group],
+                    [Control_R, ISO_First_Group]
+                };
+                key <MENU> {
+                    [Control_R, ISO_Last_Group],
+                    [Control_R, ISO_Last_Group],
+		    [Control_R, ISO_First_Group],
+                    [Control_R, ISO_First_Group]
+                };
+                key <RALT> {
+                    //[ISO_Last_Group_Lock, ISO_Last_Group_Lock],
+                    //[ISO_Group_Shift, ISO_Group_Shift]
+                    [ISO_Last_Group_Lock, Multi_key],
+                    [ISO_Group_Shift, Multi_key]
+                };
+                
+                //key <BKSP> {
+                //    type="CTRL+ALT",         // FUCK YOU CTRL-ALT-BS
+                //    symbols[Group1]= [ BackSpace, BackSpace ]
+                //};
+                //key <BKSP> {
+                //    type="PC_BREAK",   //  Terminate_server should now be set to Pause+BS
+                //    symbols[Group1]= [ BackSpace, Terminate_Server]
+                //};
+
+
+
+                key <FK01> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F1, F1, F1, F1, XF86_Switch_VT_1 ]
+                };
+                key <FK02> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F2, F2, F2, F2, XF86_Switch_VT_2 ]
+                };
+                key <FK03> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F3, F3, F3, F3, XF86_Switch_VT_3 ]
+                };
+                key <FK04> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F4, F4, F4, F4, XF86_Switch_VT_4 ]
+                };
+                key <FK05> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F5, F5, F5, F5, XF86_Switch_VT_5 ]
+                };
+                key <FK06> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F6, F6, F6, F6, XF86_Switch_VT_6 ]
+                };
+                key <FK07> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F7, F7, F7, F7, XF86_Switch_VT_7 ]
+                };
+                key <FK08> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F8, F8, F8, F8, XF86_Switch_VT_8 ]
+                };
+                key <FK09> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F9, F9, F9, F9, XF86_Switch_VT_9 ]
+                };
+                key <FK10> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F10, F10, F10, F10, XF86_Switch_VT_10 ]
+                };
+                key <FK11> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F11, F11, F11, F11, XF86_Switch_VT_11 ]
+                };
+                key <FK12> {
+                    type="CTRL+ALT",
+                    symbols[Group1]= [ F12, F12, F12, F12, XF86_Switch_VT_12 ]
+                };
+        };
+
+    xkb_geometry
+    {
+        include "pc(pc105)"
+    };
+};
+

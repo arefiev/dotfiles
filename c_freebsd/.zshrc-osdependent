@@ -1,0 +1,14 @@
+
+alias d0='du -d0'
+alias d1='du -d1'
+alias d2='du -d2'
+alias d3='du -d3'
+alias df='df -m'
+alias du='du -h'
+
+alias ls='ls -F'
+
+function seq () {
+	jot $2 $1 $2
+}
+
