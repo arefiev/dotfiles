@@ -17,7 +17,7 @@
 #mesg y
 
 uptime
-log
+#log
 from 2>/dev/null
 
 #cat notes
