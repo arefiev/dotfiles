@@ -21,41 +21,16 @@
  (message "make-local-hook is obsolete in the new order (emacs24)"))
 
 ;; require stuff
-;(require 'slime)
-(require 'hideshow)
-(require 'show-wspace)
-(require 'muse-mode)
-(require 'muse-html)
-(require 'muse-project)
-(require 'ido)
-(require 'haskell-mode)
-;(require 'inf-haskell)
-(require 'hs-lint)
-(require 'yasnippet)    ;; not yasnippet-bundle
-(require 'remember)
-(require 'org)
-(require 'subword)
-;(require 'remember-autoloads) ;; what's that?
-;(require 'semantic)
-(require 'template)
-(require 'zencoding-mode)
-(require 'mon-css-color)
-;(block perlcritic
-;  (autoload 'perlcritic        "perlcritic" "" t)
-;  (autoload 'perlcritic-region "perlcritic" "" t)
-;  (autoload 'perlcritic-mode   "perlcritic" "" t))
-(condition-case nil
-    (require 'auto-complete)
+(dolist (library '(
+    slime hideshow show-wspace muse-mode muse-html ido haskell-mode hs-lint
+    yasnippet remember org subword template zencoding-mode mon-css-color auto-complete
+    python-mode cmake-mode minimap yaml-mode
+  ))
+  (condition-case nil
+    (require library)
   (error
-    (message "Cannot load autocomplete-mode.")))
-;(require 'perl-completion) ; Does not work with 24.1.50.1
-(require 'python-mode) ; Hopefully should be loaded from ~/.elisp
-(require 'cmake-mode) ; in ~/.elisp/cmake-mode.el
-(require 'minimap) ; ~/.elisp/minimap-1.0.el
-(condition-case nil
-    (load-library "yaml-mode/yaml-mode.el")
-  (error
-    (message "Cannot load yaml-mode.")))
+    "Cannot load" library))
+)
 
 ;; load functions and local packages
 (load "~/.elisp/misc.el")

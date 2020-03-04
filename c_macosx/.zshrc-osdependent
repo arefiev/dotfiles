@@ -7,6 +7,7 @@ alias df='df -m'
 alias du='du -h'
 
 alias ls='ls -F'
+alias brew='nocorrect brew'
 
 function seq () {
 	jot $2 $1 $2
