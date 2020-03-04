@@ -37,7 +37,7 @@
 (load "~/.elisp/pretty-json.el")
 (load "~/.elisp/cyrillic-dvorak.el")
 (load "~/.elisp/runic-elder-futhark.el")
-(load "~/.elisp/buffer-list-operations.el")
+;(load "~/.elisp/buffer-list-operations.el")
 ;(load "~/.elisp/syntax-highlight.el")
 ;(load "~/.elisp/dos-to-unix.el")
 ;(load "~/.elisp/smooth-scrolling.el")
