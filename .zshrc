@@ -50,6 +50,7 @@ alias rpp='rsync   --progress --partial --append -aAxX -u '   # Can resume copyi
 alias rppr='rsync  --progress --partial --append -aAxX -u -r' # Can resume copying.
 alias mmv='noglob zmv -W'        # E. g. mmv prons(.*).avi $1/
 alias curl='nocorrect noglob curl'
+alias py=python3
 
 alias l='ls'
 alias ll='ls -l'
